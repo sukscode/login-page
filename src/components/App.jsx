@@ -1,14 +1,15 @@
 import React from "react";
+import Login from "./Login";
+
+var isLoggedIn=true;
+var dayName =['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var day = dayName[new Date().getDay()];
 
 function App() {
   return (
-    <div className="container">
-      <h1>Hello</h1>
-      <form className="form">
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button type="submit">Login</button>
-      </form>
+    <div className="container">{
+    (isLoggedIn===true)?<div><h1>Hello {day}!</h1><h3>You are still working</h3></div>:<Login />
+    }
     </div>
   );
 }
